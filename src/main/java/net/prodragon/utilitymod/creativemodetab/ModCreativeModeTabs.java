@@ -34,6 +34,20 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+    public static final CreativeModeTab PARAGLIDER_TAB = Registry.register(
+            BuiltInRegistries.CREATIVE_MODE_TAB,
+            Identifier.fromNamespaceAndPath(UtilityMod.MOD_ID, "paraglider"),
+            FabricCreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ModItems.PARAGLIDER))
+                    .title(Component.translatable("creativemodetab.utilitymod.paraglider"))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ModItems.PARAGLIDER);
+                    })
+                    .build());
+
+
+
+
 
     public static void registerModCreativeModeTabs() {
         UtilityMod.LOGGER.info("Registering Creative Mode Tabs for " + UtilityMod.MOD_ID);
