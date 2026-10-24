@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"net.prodragon.utilitymod.UtilityModDataGenerator"
+		],
+		"client": [
+			"net.prodragon.utilitymod.UtilityModClient"
 		]
 	},
 	"mixins": [
