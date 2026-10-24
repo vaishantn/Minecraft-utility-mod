@@ -10,13 +10,19 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import java.util.function.Function;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.util.Unit;
+import net.minecraft.world.entity.EquipmentSlot;
 
 public class ModItems{
     public static final Item FLUORITE = registerItem("fluorite", Item::new);
     public static final Item RAW_FLUORITE = registerItem("raw_fluorite", Item::new);
     public static final Item PARAGLIDER =
             registerItem("paraglider",
-                    properties -> new PalagliderItem(properties.stacksTo(1)));
+                    properties -> new PalagliderItem(properties
+                            .stacksTo(1)
+                            .equippable(EquipmentSlot.MAINHAND)
+                            .component(DataComponents.GLIDER, Unit.INSTANCE)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function){
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(UtilityMod.MOD_ID, name),
