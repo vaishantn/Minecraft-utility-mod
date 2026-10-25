@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityRenderLayerRegistrationCallback;
+import net.minecraft.client.renderer.entity.player.AvatarRenderer;
+import net.prodragon.utilitymod.client.ParagliderRenderLayer;
 
 public class UtilityModClient implements ClientModInitializer {
 
@@ -26,12 +29,14 @@ public class UtilityModClient implements ClientModInitializer {
                     new InputStreamReader(
                             input, StandardCharsets.UTF_8)
                     );
-            UtilityMod.LOGGER.info("Loaded obj {}",
-                    model.vertices().size());
+            UtilityMod.LOGGER.info("Loaded obj {}", model.vertices().size());
 
         } catch (IOException e) {
             UtilityMod.LOGGER.error("Failed to load zelda_style_paraglider.obj");
         }
+        LivingEntityRenderLayerRegistrationCallback.EVENT.register(((entityType, entityRenderer, registrationHelper, context) -> {if (entityRenderer instanceof AvatarRenderer<?> avatarRenderer){
+            registrationHelper.register(new ParagliderRenderLayer(avatarRenderer));
+        }}));
     }
 
 }
