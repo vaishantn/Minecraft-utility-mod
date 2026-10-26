@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
+import net.prodragon.utilitymod.UtilityMod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,12 @@ public class ObjModelRenderer {
 
     public static void render(ObjModel model, Identifier texture, PoseStack poseStack, SubmitNodeCollector collector, int lightCoords){
         if(model == null){
+            UtilityMod.LOGGER.error("Model is null");
             return;
         }
 
         List<ObjModel.Vertex> vertices = model.vertices();
+        UtilityMod.LOGGER.info("rendered vertices {}", vertices.size());
 
         if (vertices.size() < 3) {
             return;
