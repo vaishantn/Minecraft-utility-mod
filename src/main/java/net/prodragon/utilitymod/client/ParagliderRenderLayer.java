@@ -10,6 +10,9 @@ import net.minecraft.client.renderer.entity.state.AvatarRenderState;
 
 import net.prodragon.utilitymod.UtilityMod;
 import net.prodragon.utilitymod.item.ModItems;
+import com.mojang.math.Axis;
+import org.joml.Matrix4f;
+import org.joml.Matrix4fc;
 
 public final class ParagliderRenderLayer
         extends RenderLayer<AvatarRenderState, PlayerModel> {
@@ -40,7 +43,8 @@ public final class ParagliderRenderLayer
 
         poseStack.pushPose();
 
-        poseStack.translate(0.0F, 1.65F, 0.0F);
+        poseStack.translate(0.0F, 2.5F, 1.5F);
+
         poseStack.scale(0.5F, 0.5F, 0.5F);
 
         ParagliderModel.submit(poseStack, collector, lightCoords);

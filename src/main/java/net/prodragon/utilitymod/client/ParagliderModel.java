@@ -10,7 +10,7 @@ public final class ParagliderModel {
 
         private static ObjModel model;
         private static boolean loggedSubmit = false;
-        private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath("utilitymod", "src/main/resources/assets/utilitymod/textures/entity/paraglider_fabric.png");
+        private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath("utilitymod", "textures/item/entity/paraglider_fabric.png");
 
 
 

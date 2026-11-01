@@ -40,7 +40,7 @@ public class ObjModelRenderer {
                         submitVertex(buffer, pose, first, lightCoords);
                         submitVertex(buffer, pose, second, lightCoords);
                         submitVertex(buffer, pose, third, lightCoords);
-                        submitVertex(buffer, pose, third, lightCoords);
+
                     }
                 }
         );
