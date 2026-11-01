@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W W",
+    "LSL",
+    " S "
+  ],
+  "key": {
+    "W": "minecraft:white_wool",
+    "L": "minecraft:leather",
+    "S": "minecraft:stick"
+
+  },
+  "result": {
+    "id": "utilitymod:paraglider",
+    "count": 1
+  }
+
+}
